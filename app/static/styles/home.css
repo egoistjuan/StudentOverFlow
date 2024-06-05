@@ -1,0 +1,16 @@
+body {
+    background-color: darkblue;
+  }
+  
+  h1 {
+    font-size: medium;
+    color: white;
+    text-align: center;
+  }
+
+  .image-container{
+    text-align: center;
+  }
+    img {
+    border-radius: 8px;
+}
