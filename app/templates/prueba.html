@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PRUEBA</title>
+    </head>
+    <body>
+        <h1>Lista de usuarios </h1>
+
+        {%for usuario in usuarios%}
+            <p>{{ usuario.get_info() }}</p>
+        
+        {%endfor%}
+
+    <br>
+    <button class="home" onclick="window.location.href='/'; ">Inicio</button>
+    </body>
+</html>

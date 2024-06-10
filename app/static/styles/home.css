@@ -52,6 +52,7 @@ body {
       justify-content: center;
       align-items: center;
       background-color: lightblue;
+      cursor: pointer;
   }
   .button2{
       font-size: 20px;
@@ -64,3 +65,15 @@ body {
       align-items: center;
       background-color: lightblue;
   }
+  .button3{
+    font-size: 20px;
+    font-family: fantasy;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    cursor: pointer;
+}

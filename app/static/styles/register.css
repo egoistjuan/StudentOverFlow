@@ -1,0 +1,26 @@
+head{
+    background-color: aliceblue;
+}
+body{
+    background-color: aquamarine;
+
+    }
+    .record{
+        background-color: azure;
+        font-family: fantasy;
+        font-size: 40px;
+        margin: 20px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+    }
+    .register{
+        text-align: center;
+        justify-content: center;
+        margin: 10px;
+        font-family: fantasy;
+    }
+    .home{
+        background-color: blueviolet;
+    }

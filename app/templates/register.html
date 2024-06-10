@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>REGISTRO</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/register.css') }}">
+    </head>
+    <body>
+        <div class="record">
+            <h1>Crear una cuenta</h1>
+        </div>
+        <br>
+        <form class="register" action="/new_user" method="post">
+            <h2>Nombre</h2>
+            <input type="text" name="uName" required>
+            <h2>Apellido</h2>
+            <input type="text" name="secondName" required>
+            <h2>Correo</h2>
+            <input type="email" name="uEmail" required>
+            <h2>Contraseña</h2>
+            <input type="password" name="contrasenia" required>
+            <br>
+            <br>
+            <h5>ACEPTAR TERMINOS Y CONDICIONES</h5>
+            <input type="checkbox" required>
+            <br>
+            <br>
+            <h3>Registrarse</h3>
+            <input type="submit">
+        </form>
+
+        <br>
+        
+        <button class="home" onclick="window.location.href='/'; ">Inicio</button>
+
+    </body>
+</html>
