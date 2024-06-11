@@ -1,0 +1,28 @@
+head{
+    background-color: azure;
+}
+body{
+    background-color: lightcyan;
+    }
+    .head-container{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        background-color: rgb(214, 217, 245);
+        margin: 40px;
+    }
+    .logX .send_login{
+        width: 200px;
+        height: 35px;
+        text-align: center;
+        margin: 45px;
+        font-size: 20px;
+    }
+    .logX{
+        font-size: 20px;
+        justify-content: center;
+        margin: 20px;
+        font-family: fantasy;
+        text-align: center;
+    }

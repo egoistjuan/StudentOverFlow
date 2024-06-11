@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <title>Login StudentOverFlow</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/signinClass.css') }}">
+    </head>
+    <body>
+        <div class="head-container">
+            <h1>INICIA SESION    :)</h1>
+        </div>
+        <form class="logX" action="/signIn_now" method="post">
+                <h1>Ingrese su correo</h1>
+                <input type="email" name="uName_login" required>
+                <h1>Ingresa tu contraseña</h1>
+                <input type="password" name="password_login" required>
+                <br>
+                <input class="send_login" type="submit">
+        </form>
+    </body>
+</hmtl>

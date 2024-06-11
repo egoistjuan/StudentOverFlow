@@ -3,6 +3,23 @@ from .schemas.user import User
 #Libreria que nos de la conexion con la db
 import psycopg2
 
+def prueba_signIn(contrasenia):
+    #lista = []
+    conn = connection_db()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT correo, contraseña FROM users WHERE contraseña = %s", (contrasenia,))
+    Sign = cursor.fetchall()
+    for i in Sign:
+        if contrasenia == i[1]:
+            print("Exito")
+        else:
+            print("Suerte la proxima")
+
+    cursor.close()
+    conn.close()
+
+
 def mostrar_usuarios():
     listUsers = []
     conn = connection_db()
@@ -10,10 +27,10 @@ def mostrar_usuarios():
 
     cursor.execute("SELECT id_user, nombre, apellido, correo, contraseña FROM users")
 
-    usuarios = cursor.fetchall()
+    users = cursor.fetchall()
 
-    for usuario in usuarios:
-        nuevoUser = User(usuario[0], usuario[1], usuario[2], usuario[3], usuario[4])
+    for userX in users:
+        nuevoUser = User(userX[0], userX[1], userX[2], userX[3], userX[4])
         listUsers.append(nuevoUser)
 
     cursor.close()
