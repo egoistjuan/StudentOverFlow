@@ -11,9 +11,9 @@ def principal_page():
 @main.route('/prueba')
 def prueba_user():
     
-    usuarios_obtenidos = mostrar_usuarios()
+    preguntas_obtenidas = ver_preguntas()
 
-    return render_template('prueba.html', users=usuarios_obtenidos)
+    return render_template('questions.html', questions_1=preguntas_obtenidas)
 
 @main.route('/register')
 def registrarse():
@@ -23,14 +23,22 @@ def registrarse():
 @main.route('/signIn_now', methods=['POST'])
 def buscar():
     
+    correo_usuario = request.form.get('uName')
     password = request.form.get('password_login')
     sucess = prueba_signIn(password)
 
     if sucess:
-        return redirect(url_for('main.principal_page'))
+        obtener_id(correo_usuario)
+        return redirect(url_for('main.usuario'))
+        
     else:
+        flash('Contraseña incorrecta')
         return redirect(url_for('main.signIn'))
 
+@main.route('/usuario')
+def usuario():
+
+    return render_template('user.html')
 
 @main.route('/signin')
 def signIn():

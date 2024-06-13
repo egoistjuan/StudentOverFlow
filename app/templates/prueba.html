@@ -4,7 +4,7 @@
         <title>PRUEBA</title>
     </head>
     <body>
-        <h1>Lista de usuarios </h1>
+        <h1>Lista de usuarios</h1>
 
         {%for user in users%}
             <p>{{ user.get_info()["name"] }}  {{ user.get_info()["email"] }}</p>

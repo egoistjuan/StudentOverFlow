@@ -1,5 +1,6 @@
 #importamos el metodo user para mostrar los usuarios
 from .schemas.user import User
+from .schemas.questions import Question
 #Libreria que nos de la conexion con la db
 import psycopg2
 
@@ -12,13 +13,24 @@ def prueba_signIn(contrasenia):
     Sign = cursor.fetchall()
     for i in Sign:
         if contrasenia == i[1]:
-            print("Exito")
+            return True
         else:
-            print("Suerte la proxima")
+            return False
 
     cursor.close()
     conn.close()
 
+def obtener_id(correo_user):
+    conn = connection_db()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM users WHERE correo = %s", (correo_user,))
+    usuario = cursor.fetchall()
+
+    print(usuario)
+
+    cursor.close()
+    conn.close()
 
 def mostrar_usuarios():
     listUsers = []
@@ -38,7 +50,26 @@ def mostrar_usuarios():
 
     return listUsers
 
+def ver_preguntas():
+    lista_preguntas = []
+    conn = connection_db()
+    cursor = conn.cursor()
 
+    cursor.execute("SELECT id_question, question, id_user FROM questions")
+
+    questions_1 = cursor.fetchall()
+
+    for read in questions_1:
+        questions_read = Question(read[0], read[1], read[2])
+        lista_preguntas.append(questions_read)
+
+    cursor.close()
+    conn.close()
+
+    return lista_preguntas
+
+
+#Esta funcion sirve para crear usuarios nuevos
 def newUser(nombre, apellido, correo, contrasenia):
     conn = connection_db()
     cursor = conn.cursor()
@@ -58,6 +89,7 @@ def connection_db():
     global connection
     
     try:
+        #Aqui se hace la conexion para la DB de pgAdmin
         print('Loading connection')
 
         connection = psycopg2.connect(

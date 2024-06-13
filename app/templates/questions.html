@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PREGUNTAS</title>
+    </head>
+    <body>
+        <h1>Hola Mundo</h1>
+        {%for questions in questions_1%}
+            <p>{{ questions.get_question()["pregunta"] }}</p>
+
+        {%endfor%}
+    </body>
+</html>
