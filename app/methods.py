@@ -83,6 +83,19 @@ INSERT INTO users (nombre, apellido, correo, contraseña) VALUES(%s, %s, %s, %s)
     cursor.close()
     conn.close()
 
+def newQuestion(id, pregunta, id_usuario):
+    conn = connection_db()
+    cursor = conn.cursor()
+
+    cursor.execute(""""
+INSERT INTO questions (id_question, question, id_user) VALUES(%s, %s, %s)
+                   """, (id, pregunta, id_usuario))
+    
+    conn.commit()
+
+    cursor.close()
+    conn.close()
+
     
 #Funcion para conectar con la DataBase por medio de la libreria psycopg2
 def connection_db():
