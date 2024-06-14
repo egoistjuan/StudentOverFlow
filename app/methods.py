@@ -11,6 +11,7 @@ def prueba_signIn(contrasenia):
 
     cursor.execute("SELECT correo, contraseña FROM users WHERE contraseña = %s", (contrasenia,))
     Sign = cursor.fetchall()
+    print(Sign)
     for i in Sign:
         if contrasenia == i[1]:
             return True
@@ -20,17 +21,18 @@ def prueba_signIn(contrasenia):
     cursor.close()
     conn.close()
 
-def obtener_id(correo_user):
+def obtener_id_por_email(correo_user):
     conn = connection_db()
     cursor = conn.cursor()
 
     cursor.execute("SELECT * FROM users WHERE correo = %s", (correo_user,))
     usuario = cursor.fetchall()
-
     print(usuario)
 
     cursor.close()
     conn.close()
+
+    return usuario[0]
 
 def mostrar_usuarios():
     listUsers = []

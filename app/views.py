@@ -23,22 +23,28 @@ def registrarse():
 @main.route('/signIn_now', methods=['POST'])
 def buscar():
     
-    correo_usuario = request.form.get('uName')
+    correo_usuario = request.form.get('uName_login')
     password = request.form.get('password_login')
     sucess = prueba_signIn(password)
 
     if sucess:
-        obtener_id(correo_usuario)
-        return redirect(url_for('main.usuario'))
+        print(correo_usuario)
+
+        return redirect(url_for('main.usuario', correo=correo_usuario))
         
     else:
         flash('Contraseña incorrecta')
         return redirect(url_for('main.signIn'))
 
-@main.route('/usuario')
-def usuario():
 
-    return render_template('user.html')
+
+@main.route('/usuario/<correo>')
+def usuario(correo):
+
+    info = obtener_id_por_email(correo)
+    print(info)
+
+    return render_template('user.html', data=info)
 
 @main.route('/signin')
 def signIn():

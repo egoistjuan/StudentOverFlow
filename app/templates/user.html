@@ -2,8 +2,12 @@
 <html>
     <head>
         <title>Usuario</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/user.css') }}">
     </head>
     <body>
-        <p>Hola Mundo</p>
+        <div class="text-container">
+            <marquee>Hola {{ data[1] }}</marquee>
+        </div>
+        <img src="https://pbs.twimg.com/media/EnTgFNJWEAA7fGQ.jpg">
     </body>
 </html>
