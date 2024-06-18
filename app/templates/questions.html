@@ -2,12 +2,17 @@
 <html>
     <head>
         <title>PREGUNTAS</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/questions.css') }}">
     </head>
     <body>
-        <h1>Preguntas de la Comunidad</h1>
-        {%for questions in questions_1%}
-            <p>{{ questions.get_question()["pregunta"] }}</p>
+        <div class="questions-container">
+            <h1>Preguntas de la Comunidad</h1>
+            {%for questions in questions_1%}
+                <p>{{ questions.get_question()["pregunta"] }}</p>
 
-        {%endfor%}
+            {%endfor%}
+        </div>
+
+        <button class="home" onclick="window.location.href='/'; "> <- Inicio </button>
     </body>
 </html>

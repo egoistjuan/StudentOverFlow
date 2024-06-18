@@ -5,9 +5,25 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/user.css') }}">
     </head>
     <body>
-        <div class="text-container">
-            <marquee>Hola {{ data[1] }}</marquee>
+        <div class="logo_container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGOeW-aMwQjtDc2yv_sim52miSXX79XnpBaQ&s" width="40" height="auto">
+            <h1>StudentOverFlow</h1>
+            <div class="button-logOut">
+                <button class="logOut" onclick="window.location.href='/'; "><span>Cerrar Sesion</span></button>
+            </div>
         </div>
-        <img src="https://pbs.twimg.com/media/EnTgFNJWEAA7fGQ.jpg">
+        <div class="text-container">
+            <h1 class="text-container-h1">Hola {{ data[1] }}!</h1>
+            <h2></h2>
+        </div>
+        <br>
+        <div class="createQ">
+            <button class="Q1" onclick="window.location.href='/usuario/createQuestion/{{data[3]}}'; ">Crear pregunta</button>
+        </div>
+        {% for questions in questions_2 %}
+            <h2>{{ questions.get_question()["pregunta"] }} <a href="/usuario/{{ data[3] }}/question/{{ questions.get_question()['id_pregunta'] }}">Ver respuestas</a></h2>
+        {%endfor%}
+        
+        
     </body>
 </html>

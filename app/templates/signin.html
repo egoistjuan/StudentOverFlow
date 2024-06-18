@@ -5,16 +5,19 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/signinClass.css') }}">
     </head>
     <body>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    {{ message }}
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-        <div class="head-container">
-            <h1>INICIA SESION    :)</h1>
+        <div class="error-container">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
         </div>
+        <div class="head-container">
+            <h1>INICIA SESION</h1>
+        </div>
+        <br>
         <form class="logX" action="/signIn_now" method="post">
                 <h1>Ingrese su correo</h1>
                 <input type="email" name="uName_login" required >
@@ -23,7 +26,7 @@
                 <br>
                 <input class="send_login" type="submit">
         </form>
-
-        <button class="home" onclick="window.location.href='/'; "> <- Inicio </button>
+        <br>
+        <button class="home" onclick="window.location.href='/'; "><span> Inicio </span></button>
     </body>
 </hmtl>

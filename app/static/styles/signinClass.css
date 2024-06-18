@@ -2,15 +2,26 @@ head{
     background-color: azure;
 }
 body{
-    background-color: lightcyan;
+    background-color: white;
+    }
+    .error-container{
+        display: flex;
+        text-align: center;
+        font-size: 15px;
+        font-family: fantasy;
     }
     .head-container{
         display: flex;
         align-items: center;
         text-align: center;
         justify-content: center;
-        background-color: rgb(214, 217, 245);
-        margin: 40px;
+        background-color: lightcyan;
+        margin: 35px;
+    }
+    .head-container h1{
+        text-align: center;
+        font-family: fantasy;
+        margin: 10px;
     }
     .logX .send_login{
         width: 200px;
@@ -20,16 +31,45 @@ body{
         font-size: 20px;
     }
     .logX{
-        font-size: 20px;
+        font-size: 15px;
         justify-content: center;
-        margin: 20px;
-        font-family: fantasy;
+        margin: 8px;
+        font-family:monospace;
         text-align: center;
     }
 
     .home{
-        background-color: blueviolet;
+        display: inline-block;
+        text-align: center;
+        background-color: rgb(133, 189, 189);
         font-family: fantasy;
-        height: 35px;
-        width: 100px;
+        font-size: 20px;
+        padding: 20px;
+        width: 200px;
+        border-radius: 4px;
+        transition: all 0.5s;
+        cursor: pointer;
+        border: none;
+        margin: 5px;
+    }
+    .home span{
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+    .home span:after {
+        content: '\01F525';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    .home:hover span{
+        padding-right: 25px;
+    }
+    .home:hover span:after{
+        opacity: 1;
+        right: 0;
     }

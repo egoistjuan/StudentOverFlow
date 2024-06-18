@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Crear respuesta</title>
+    </head>
+    <body>
+        <h1>Hola {{ data[1] }}</h1>
+        <h1>¿Como te gustaria responder a esta pregunta?</h1>
+        <h2>{{ data_q[1] }}</h2>
+        <form action="/usuario/createAnswer/data" method="post">
+            <input type="number" name="id_q" value="{{data_q[0]}}" disabled>
+            <input type="number" name="id_user" value="{{data[0]}}" disabled>
+            <h1>Inserta tu respuesta</h1>
+            <br>
+            <input class="answer-container" type="text" name="answer" required>
+            <br>
+            <input class="send" type="submit">
+        </form>
+    </body>
+</html>

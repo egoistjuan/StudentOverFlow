@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CreateQ</title>
+    </head>
+    <body>
+        <h1>Hola{{ datos[1] }}</h1>
+        <h1>Crear una pregunta </h1>
+        <form action="/usuario/createQuestion/data" method="post">
+            <input type="number" name="user_id" value="{{datos[0]}}" disabled>
+            <h1>Ingrese su pregunta(maximo 500 caracteres)</h1>
+            <input type="text" name="questionX" required>
+            <br>
+            <br>
+            <br>
+            <input class="send" type="submit">
+        </form>
+    </body>
+</html>

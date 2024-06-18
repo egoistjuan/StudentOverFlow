@@ -1,6 +1,7 @@
 #importamos el metodo user para mostrar los usuarios
 from .schemas.user import User
 from .schemas.questions import Question
+from .schemas.answers import Answers
 #Libreria que nos de la conexion con la db
 import psycopg2
 
@@ -70,6 +71,37 @@ def ver_preguntas():
 
     return lista_preguntas
 
+def buscar_pregunta_id(id_q):
+    conn = connection_db()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM questions WHERE id_question = %s", (id_q))
+    question = cursor.fetchall()
+    print(question)
+
+    cursor.close()
+    conn.close()
+
+    return question[0]
+
+def ver_respuestas(id_question):
+    respuestas = []
+    conn = connection_db()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT id_answers, answers, id_question, id_user FROM answers WHERE id_question = %s", (id_question))
+    fetch_respuesta = cursor.fetchall()
+    print(fetch_respuesta)
+    for i in fetch_respuesta:
+        respuesta = Answers(i[0], i[1], i[2], i[3])
+        respuestas.append(respuesta)
+
+    cursor.close()
+    conn.close()
+
+    return fetch_respuesta[0]
+
+
 
 #Esta funcion sirve para crear usuarios nuevos
 def newUser(nombre, apellido, correo, contrasenia):
@@ -85,20 +117,34 @@ INSERT INTO users (nombre, apellido, correo, contraseña) VALUES(%s, %s, %s, %s)
     cursor.close()
     conn.close()
 
-def newQuestion(id, pregunta, id_usuario):
+def newQuestion(pregunta, id_usuario):
     conn = connection_db()
     cursor = conn.cursor()
 
-    cursor.execute(""""
-INSERT INTO questions (id_question, question, id_user) VALUES(%s, %s, %s)
-                   """, (id, pregunta, id_usuario))
+    cursor.execute("""
+INSERT INTO questions (question, id_user) VALUES(%s, %s)
+                   """, (pregunta, id_usuario))
     
     conn.commit()
 
     cursor.close()
     conn.close()
 
+
+def newAnswer(answer, id_question, id_user):
+    conn = connection_db()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+INSERT INTO answers(answers, id_question, id_user) VALUES(%s, %s, %s)
+""", (answer, id_question, id_user))
     
+    conn.commit
+
+    cursor.close()
+    conn.close()
+
+
 #Funcion para conectar con la DataBase por medio de la libreria psycopg2
 def connection_db():
     global connection

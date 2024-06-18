@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JK</title>
+    </head>
+    <body>
+        <h1>Hola{{ data_u[1] }}</h1>
+        <h1>Pregunta:  {{ data_q[1] }} </h1>
+        <br>
+        <div class="answers">
+            {% for i in answers %}
+                <p>{{ answers.get_answers()["respuesta"] }}</p>
+            {%endfor%}
+        </div>
+        <button class="ans_container" onclick="window.location.href='/usuario/{{data_u[3]}}/question/{{data_q[0]}}/createAnswer'; ">¿Quieres responder?</button>
+    </body>
+</html>
