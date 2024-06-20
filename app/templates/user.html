@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Usuario</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/user.css') }}">
     </head>
     <body>
@@ -13,17 +14,18 @@
             </div>
         </div>
         <div class="text-container">
-            <h1 class="text-container-h1">Hola {{ data[1] }}!</h1>
-            <h2></h2>
+            <h1 class="text-container-h1">Hola {{ data[1] }} !</h1>
+            <div class="createQ">
+                <button class="Q1" onclick="window.location.href='/usuario/createQuestion/{{data[3]}}'; "><span>Crear pregunta</span></button>
+            </div>
         </div>
         <br>
-        <div class="createQ">
-            <button class="Q1" onclick="window.location.href='/usuario/createQuestion/{{data[3]}}'; ">Crear pregunta</button>
+        <div class="preguntas-container">
+            {% for questions in questions_2 %}
+                <h2>{{ questions.get_question()["pregunta"] }} </h2>
+                <a href="/usuario/{{ data[3] }}/question/{{ questions.get_question()['id_pregunta'] }}">Ver respuestas</a>
+            {%endfor%}
         </div>
-        {% for questions in questions_2 %}
-            <h2>{{ questions.get_question()["pregunta"] }} <a href="/usuario/{{ data[3] }}/question/{{ questions.get_question()['id_pregunta'] }}">Ver respuestas</a></h2>
-        {%endfor%}
-        
         
     </body>
 </html>

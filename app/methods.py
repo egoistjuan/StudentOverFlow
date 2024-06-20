@@ -99,7 +99,8 @@ def ver_respuestas(id_question):
     cursor.close()
     conn.close()
 
-    return fetch_respuesta[0]
+    #return fetch_respuesta[0]
+    return respuestas
 
 
 
@@ -118,6 +119,9 @@ INSERT INTO users (nombre, apellido, correo, contraseña) VALUES(%s, %s, %s, %s)
     conn.close()
 
 def newQuestion(pregunta, id_usuario):
+    print("--------")
+    print(id_usuario)
+    print("--------")
     conn = connection_db()
     cursor = conn.cursor()
 
@@ -139,7 +143,7 @@ def newAnswer(answer, id_question, id_user):
 INSERT INTO answers(answers, id_question, id_user) VALUES(%s, %s, %s)
 """, (answer, id_question, id_user))
     
-    conn.commit
+    conn.commit()
 
     cursor.close()
     conn.close()

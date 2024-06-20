@@ -54,7 +54,10 @@ def pregunta(correo, id):
     info_usuario = obtener_id_por_email(correo)
     print(info_usuario)
     pregunta_info = buscar_pregunta_id(id)
+    print("-----------")
     respuesta_q = ver_respuestas(id)
+    print(respuesta_q)
+    print("---------")
 
     return render_template('answers.html',data_u=info_usuario, answers=respuesta_q, data_q=pregunta_info)
 

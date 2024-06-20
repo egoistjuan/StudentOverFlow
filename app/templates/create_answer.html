@@ -2,19 +2,28 @@
 <html>
     <head>
         <title>Crear respuesta</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/cAnswers.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Hola {{ data[1] }}</h1>
+        <div class="logo_container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGOeW-aMwQjtDc2yv_sim52miSXX79XnpBaQ&s" width="40" height="auto">
+            <h1>StudentOverFlow</h1>
+            <div class="button-logOut">
+                <button class="logOut" onclick="window.location.href='/signin'; "><span>Cerrar Sesión</span></button>
+            </div>
+        </div>
+        <h1>Hola {{ data[1] }} !</h1>
         <h1>¿Como te gustaria responder a esta pregunta?</h1>
         <h2>{{ data_q[1] }}</h2>
-        <form action="/usuario/createAnswer/data" method="post">
-            <input type="number" name="id_q" value="{{data_q[0]}}" disabled>
-            <input type="number" name="id_user" value="{{data[0]}}" disabled>
+        <form class="answer" action="/usuario/createAnswer/data" method="post">
+            <input type="number" name="id_q" value="{{data_q[0]}}" style="display: none;">
+            <input type="number" name="id_user" value="{{data[0]}}" style="display: none;">
             <h1>Inserta tu respuesta</h1>
             <br>
             <input class="answer-container" type="text" name="answer" required>
             <br>
-            <input class="send" type="submit">
+            <input class="send" type="submit" value="Responder">
         </form>
     </body>
 </html>

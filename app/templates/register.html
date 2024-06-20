@@ -3,34 +3,40 @@
     <head>
         <title>REGISTRO</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/register.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="logo_container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGOeW-aMwQjtDc2yv_sim52miSXX79XnpBaQ&s" width="40" height="auto">
+            <h1>StudentOverFlow</h1>
+            <div class="button-logOut">
+                <button class="logOut" onclick="window.location.href='/'; "><span>Inicio</span></button>
+            </div>
+        </div>
         <div class="record">
             <h1>Crear una cuenta</h1>
         </div>
         <br>
         <form class="register" action="/new_user" method="post">
-            <h2>Nombre</h2>
+            <h2>Ingresa tu nombre</h2>
             <input type="text" name="uName" required>
-            <h2>Apellido</h2>
+            <h2>Ingresa tu apellido</h2>
             <input type="text" name="secondName" required>
-            <h2>Correo</h2>
+            <h2>Ingresa tu correo</h2>
             <input type="email" name="uEmail" required>
-            <h2>Contraseña</h2>
+            <h2>Ingresa tu contraseña</h2>
             <input type="password" name="contrasenia" required>
             <br>
             <br>
-            <h5>ACEPTAR TERMINOS Y CONDICIONES</h5>
-            <input type="checkbox" required>
-            <br>
             <br>
             <h3>Registrarse</h3>
-            <input class="send" type="submit">
+            <input class="send" type="submit" value="Registrarse!">
         </form>
-
         <br>
-        
-        <button class="home" onclick="window.location.href='/'; "> <- Inicio </button>
+        <div class="start">
+            <h3>¿Ya tienes cuenta? Inicia Sesion</h3>
+            <button class="start-button" onclick="window.location.href='/signin'; "><span>Entra a tu cuenta</span></button>
+        </div>
 
     </body>
 </html>

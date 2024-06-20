@@ -3,16 +3,25 @@
     <head>
         <title>PREGUNTAS</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/questions.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="logo_container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGOeW-aMwQjtDc2yv_sim52miSXX79XnpBaQ&s" width="40" height="auto">
+            <h1>StudentOverFlow</h1>
+            <div class="button-logOut">
+                <button class="logOut" onclick="window.location.href='/'; "><span>Inicio</span></button>
+            </div>
+        </div>
         <div class="questions-container">
             <h1>Preguntas de la Comunidad</h1>
+            <h2>¿Quieres ver las respuestas? Registrate</h2>
+            <div class="button-signIn">
+                <button class="signIn" onclick="window.location.href='/register'; "><span>Registrarse</span></button>
+            </div>
             {%for questions in questions_1%}
                 <p>{{ questions.get_question()["pregunta"] }}</p>
-
             {%endfor%}
         </div>
-
-        <button class="home" onclick="window.location.href='/'; "> <- Inicio </button>
     </body>
 </html>

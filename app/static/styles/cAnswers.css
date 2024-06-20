@@ -1,5 +1,5 @@
 head{
-    background-color: azure;
+    background-color: white;
 }
 body{
     background-color: white;
@@ -57,38 +57,22 @@ body{
         opacity: 1;
         right: 0;
     }
-    .error-container{
-        display: flex;
-        text-align: center;
-        font-size: 15px;
-        font-family: fantasy;
-    }
-    .head-container{
-        display: flex;
-        align-items: center;
-        text-align: center;
+    .answer{
         justify-content: center;
-        background-color: lightcyan;
-        margin: 35px;
+        text-align: center;
     }
-    .head-container h1{
+    .answer h1{
+        font-family: "Space Grotesk", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 20px;
+        font-style: normal;
         text-align: left;
-        align-items: center;
-        font-family: "Space Grotesk", sans-serif;
-        margin: 10px;
     }
-    .logX{
-        font-size: 15px;
-        justify-content: center;
-        margin: 8px;
-        font-family:monospace;
-        text-align: center;
-    }
-    .logX input[type=email]{
-        font-family: "Space Grotesk", sans-serif;
-        font-weight: 15px;
-        width: 30%;
-        padding: 12px 20px;
+    .answer input[type=text]{
+        width: 60%;
+        padding: 30px 40px;
+        box-sizing: border-box;
+        text-align: left;
         margin: 8px 0;
         box-sizing: border-box;
         text-align: left;
@@ -96,30 +80,15 @@ body{
         -webkit-transition: 0.5s;
         transition: 0.5s;
         outline: none;
+        background-color: #f9f9f9;
+        transition: border 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
     }
-    .logX input[type=email]:focus{
+    .answer input[type=text]:focus{
         border:3px solid #555;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
-    .logX input[type=password]{
-        font-family: "Space Grotesk", sans-serif;
-        font-weight: 15px;
-        width: 30%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        text-align: left;
-        border: 3px solid #ccc;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-        outline: none;
-    }
-    .logX input[type=password]:focus{
-        border:3px solid #555;
-    }
-    .logX .send-login{
-        font-size: 20px;
-    }
-    .logX input[type=submit]{
+    .answer input[type=submit]{
         font-family: "Space Grotesk", sans-serif;
         font-weight: 20px;
         width: 24%;
@@ -131,12 +100,11 @@ body{
         background-color: aqua;
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
-    .logX input[type=submit]:hover{
+    .answer input[type=submit]:hover{
         background-color: lightseagreen;
         transform: scale(1.05);
     }
-    .logX input[type=submit]:active{
+    .answer input[type=submit]:active{
         background-color: darkcyan;
         transform: scale(0.95);
     }
-    

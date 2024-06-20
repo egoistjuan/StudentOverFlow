@@ -1,5 +1,5 @@
 head{
-    background-color: azure;
+    background-color: white;
 }
 body{
     background-color: white;
@@ -57,86 +57,43 @@ body{
         opacity: 1;
         right: 0;
     }
-    .error-container{
+    .answers{
         display: flex;
-        text-align: center;
-        font-size: 15px;
-        font-family: fantasy;
+        flex-direction: column;
+        align-items: center;
     }
-    .head-container{
+    .answers p{
         display: flex;
-        align-items: center;
-        text-align: center;
         justify-content: center;
-        background-color: lightcyan;
-        margin: 35px;
-    }
-    .head-container h1{
-        text-align: left;
-        align-items: center;
         font-family: "Space Grotesk", sans-serif;
-        margin: 10px;
-    }
-    .logX{
-        font-size: 15px;
-        justify-content: center;
-        margin: 8px;
-        font-family:monospace;
-        text-align: center;
-    }
-    .logX input[type=email]{
-        font-family: "Space Grotesk", sans-serif;
-        font-weight: 15px;
-        width: 30%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        text-align: left;
-        border: 3px solid #ccc;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-        outline: none;
-    }
-    .logX input[type=email]:focus{
-        border:3px solid #555;
-    }
-    .logX input[type=password]{
-        font-family: "Space Grotesk", sans-serif;
-        font-weight: 15px;
-        width: 30%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        text-align: left;
-        border: 3px solid #ccc;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-        outline: none;
-    }
-    .logX input[type=password]:focus{
-        border:3px solid #555;
-    }
-    .logX .send-login{
-        font-size: 20px;
-    }
-    .logX input[type=submit]{
-        font-family: "Space Grotesk", sans-serif;
+        font-optical-sizing: auto;
         font-weight: 20px;
-        width: 24%;
-        padding: 10px 18px;
+        font-style: normal;
+        text-decoration:underline;
+        margin: 15px;
+    }
+    .ans_container{
+        font-family: "Space Grotesk", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 20px;
+        font-style: normal;
+        width: 250px;
+        height: 50px;
+        text-align: center;
         margin: 5px;
+        justify-content: center;
+        align-items: center;
+        background-color: aqua;
+        cursor: pointer;
         -webkit-border-radius: 5px;
         border-radius: 5px;
-        cursor: pointer;
-        background-color: aqua;
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
-    .logX input[type=submit]:hover{
+    .ans_container:hover{
         background-color: lightseagreen;
         transform: scale(1.05);
     }
-    .logX input[type=submit]:active{
+    .ans_container:active{
         background-color: darkcyan;
         transform: scale(0.95);
     }
-    

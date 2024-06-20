@@ -1,5 +1,5 @@
 head{
-    background-color: azure;
+    background-color: white;
 }
 body{
     background-color: white;
@@ -57,38 +57,47 @@ body{
         opacity: 1;
         right: 0;
     }
-    .error-container{
-        display: flex;
-        text-align: center;
-        font-size: 15px;
-        font-family: fantasy;
-    }
-    .head-container{
+    .container-text{
         display: flex;
         align-items: center;
-        text-align: center;
-        justify-content: center;
-        background-color: lightcyan;
-        margin: 35px;
+        flex-direction: column;
     }
-    .head-container h1{
+    .container-text h1{
+        font-family: "Space Grotesk", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 40px;
+        font-style: normal;
+        background-color: azure;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .container-text h2{
+        font-family: "Space Grotesk", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 28px;
+        font-style: normal;
+        background-color: azure;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .question{
+        justify-content: center;
+        text-align: center;
+    }
+    .question h1{
+        font-family: "Space Grotesk", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 20px;
+        font-style: normal;
         text-align: left;
-        align-items: center;
-        font-family: "Space Grotesk", sans-serif;
-        margin: 10px;
     }
-    .logX{
-        font-size: 15px;
-        justify-content: center;
-        margin: 8px;
-        font-family:monospace;
-        text-align: center;
-    }
-    .logX input[type=email]{
-        font-family: "Space Grotesk", sans-serif;
-        font-weight: 15px;
-        width: 30%;
-        padding: 12px 20px;
+    .question input[type=text]{
+        width: 60%;
+        padding: 30px 40px;
+        box-sizing: border-box;
+        text-align: left;
         margin: 8px 0;
         box-sizing: border-box;
         text-align: left;
@@ -96,30 +105,15 @@ body{
         -webkit-transition: 0.5s;
         transition: 0.5s;
         outline: none;
+        background-color: #f9f9f9;
+        transition: border 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
     }
-    .logX input[type=email]:focus{
+    .question input[type=text]:focus{
         border:3px solid #555;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
-    .logX input[type=password]{
-        font-family: "Space Grotesk", sans-serif;
-        font-weight: 15px;
-        width: 30%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        text-align: left;
-        border: 3px solid #ccc;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-        outline: none;
-    }
-    .logX input[type=password]:focus{
-        border:3px solid #555;
-    }
-    .logX .send-login{
-        font-size: 20px;
-    }
-    .logX input[type=submit]{
+    .question input[type=submit]{
         font-family: "Space Grotesk", sans-serif;
         font-weight: 20px;
         width: 24%;
@@ -131,12 +125,11 @@ body{
         background-color: aqua;
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
-    .logX input[type=submit]:hover{
+    .question input[type=submit]:hover{
         background-color: lightseagreen;
         transform: scale(1.05);
     }
-    .logX input[type=submit]:active{
+    .question input[type=submit]:active{
         background-color: darkcyan;
         transform: scale(0.95);
     }
-    

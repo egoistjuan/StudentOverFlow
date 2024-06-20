@@ -1,5 +1,5 @@
 class Answers():
-    def respuestas(self, id_answer, respuesta, id_question, id_user):
+    def __init__(self, id_answer, respuesta, id_question, id_user):
         self.id = id_answer
         self.respuesta = respuesta
         self.id_question = id_question

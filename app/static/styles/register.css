@@ -2,36 +2,181 @@ head{
     background-color: aliceblue;
 }
 body{
-    background-color: aquamarine;
+    background-color: white;
 
+    }
+    .logo_container{
+        display: flex;
+        align-items: center;
+        text-align: left;
+        background-color: azure;
+    }
+    .logo_container img{
+        margin-right: 15px;
+        margin-top: 5px;
+    }
+    .logo_container h1{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin: 5px;   
+    }
+    .logo_container .button-logOut {
+        display: flex;
+        justify-content: flex-end;
+        text-align: right;
+        width: 100%;
+    }
+    .logOut{
+        background-color: aqua;
+        display: inline-block;
+        text-align: center;
+        padding: 12px;
+        border-radius: 4px;
+        transition: all 0.5s;
+        cursor: pointer;
+        border: none;
+        margin: 5px;
+    }
+    .logOut span{
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+    .logOut span:after{
+        content: ' ';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: 0;
+        transition: 0.5s;
+    }
+    .logOut:hover{
+        padding-right: 20px;
+    }
+    .logOut:hover span:after{
+        opacity: 1;
+        right: 0;
     }
     .record{
         background-color: azure;
-        font-family: fantasy;
-        font-size: 40px;
+        font-family: "Space Grotesk", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 30px;
+        font-style: normal;
         margin: 20px;
         align-items: center;
         justify-content: center;
         display: flex;
-        text-align: center;
     }
     .register{
-        text-align: center;
-        justify-content: center;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
         margin: 10px;
-        font-family: fantasy;
+        font-family: "Space Grotesk", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 20px;
+        font-style: normal;
     }
-    .register .send{
-        width: 200px;
-        height: 35px;
-        font-family: sans-serif;
-        font-size: 20px;
-        background-color: beige;
-        text-align: center;
+    .register input[type=text]{
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 15px;
+        width: 30%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        text-align: left;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
     }
-    .home{
-        background-color: blueviolet;
-        font-family: fantasy;
-        height: 35px;
-        width: 100px;
+    .register input[type=text]:focus{
+        border:3px solid #555;
     }
+    .register input[type=email]{
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 15px;
+        width: 30%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        text-align: left;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+    }
+    .register input[type=email]:focus{
+        border:3px solid #555;
+    }
+    .register input[type=password]{
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 15px;
+        width: 30%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        text-align: left;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+    }
+    .register input[type=password]:focus{
+        border:3px solid #555;
+    }
+    .register input[type=submit]{
+        padding: 10px 18px;
+        background-color: aqua;
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 50%;
+        width: 25%;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .register input[type=submit]:hover{
+        background-color: lightseagreen;
+        transform: scale(1.05);
+    }
+    .register input[type=submit]:active{
+        background-color: darkcyan;
+        transform: scale(0.95);
+    }
+    .start{
+        display: flex;
+        flex-direction: column;
+    }
+    .start h3{
+        display: flex;
+        justify-content: flex-start;
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 20px;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+    .start .start-button{
+        background-color: aqua;
+        font-family: "Space Grotesk", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        width: 25%;
+        padding: 10px 18px;
+        margin-left: 5px;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .start .start-button:hover{
+        background-color: lightseagreen;
+        transform: scale(1.05);
+    }
+    .start .start-button:active{
+        background-color: darkcyan;
+        transform: scale(0.95);
+    }
+    

@@ -3,8 +3,16 @@
     <head>
         <title>Login StudentOverFlow</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/signinClass.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="logo_container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGOeW-aMwQjtDc2yv_sim52miSXX79XnpBaQ&s" width="40" height="auto">
+            <h1>StudentOverFlow</h1>
+            <div class="button-logOut">
+                <button class="logOut" onclick="window.location.href='/'; "><span>Inicio</span></button>
+            </div>
+        </div>
         <div class="error-container">
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
@@ -15,18 +23,17 @@
             {% endwith %}
         </div>
         <div class="head-container">
-            <h1>INICIA SESION</h1>
+            <h1>INICIAR SESION</h1>
         </div>
         <br>
         <form class="logX" action="/signIn_now" method="post">
-                <h1>Ingrese su correo</h1>
+                <h1>Correo Electronico</h1>
                 <input type="email" name="uName_login" required >
-                <h1>Ingresa tu contraseña</h1>
+                <h1>Contraseña</h1>
                 <input type="password" name="password_login" required>
                 <br>
-                <input class="send_login" type="submit">
+                <br>
+                <input class="send_login" type="submit" value="Inicia Sesión">
         </form>
-        <br>
-        <button class="home" onclick="window.location.href='/'; "><span> Inicio </span></button>
     </body>
 </hmtl>

@@ -2,16 +2,27 @@
 <html>
     <head>
         <title>JK</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/answers.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Hola{{ data_u[1] }}</h1>
+        <div class="logo_container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGOeW-aMwQjtDc2yv_sim52miSXX79XnpBaQ&s" width="40" height="auto">
+            <h1>StudentOverFlow</h1>
+            <div class="button-logOut">
+                <button class="logOut" onclick="window.location.href='/signin'; "><span>Cerrar Sesión</span></button>
+            </div>
+        </div>
+        <h1>Hola {{ data_u[1] }}!</h1>
         <h1>Pregunta:  {{ data_q[1] }} </h1>
         <br>
         <div class="answers">
             {% for i in answers %}
-                <p>{{ answers.get_answers()["respuesta"] }}</p>
+                <p>{{ i.get_answers()["respuesta"] }}</p>
             {%endfor%}
         </div>
+        <br>
+        <br>
         <button class="ans_container" onclick="window.location.href='/usuario/{{data_u[3]}}/question/{{data_q[0]}}/createAnswer'; ">¿Quieres responder?</button>
     </body>
 </html>

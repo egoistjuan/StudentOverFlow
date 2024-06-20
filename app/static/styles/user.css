@@ -8,7 +8,7 @@ body {
         display: flex;
         align-items: center;
         text-align: left;
-        background-color: azure;
+        background-color: aliceblue;
     }
     .logo_container img{
         margin-right: 15px;
@@ -57,9 +57,64 @@ body {
         opacity: 1;
         right: 0;
     }
+    .text-container{
+        display: flex;
+        align-items: first baseline;
+    }
     .text-container h1 {
         font-family: fantasy;
         font-size: 32px;
         text-align: left;
         display: flex;
+        width: 100%;
+    }
+    .createQ {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        text-align: right;
+    }
+    .Q1 {
+        background-color: aqua;
+        display: inline-block;
+        text-align: center;
+        padding: 12px;
+        border-radius: 4px;
+        transition: all 0.5s;
+        cursor: pointer;
+        border: none;
+        margin: 5px;
+    }
+    .Q1 span{
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+    .Q1:hover{
+        padding-right: 20px;
+    }
+    .Q1:hover span:after{
+        opacity: 1;
+        right: 0;
+    }
+    .preguntas-container{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: black;
+    }
+    .preguntas-container h2{
+        font-size: 28px;
+        text-decoration: overline;
+        font-family: "Monserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 28px;
+        font-style: normal;
+    }
+    .preguntas-container a{
+        font-family: "Monserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 16px;
+        font-style: normal;
     }
