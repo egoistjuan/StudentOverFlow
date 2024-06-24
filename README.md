@@ -8,4 +8,24 @@ Para este proyecto se baso en la idea de crear una aplicacion web para estudiant
 
 -Para instalar las librerías, ejecutar el siguiente comando:
 
-    pip3 install -r requirements.txt
+    pip install -r requirements.txt
+
+# Base de Datos
+--La db se debe conformar de 3 tablas, una para los usuarios y 2 relacionadas mediante una foreign-key
+
+|      usuario       |      |       questions      |
+|--------------------|      |----------------------|
+|id_user   |SerialKey|      |id_user    |ForeignKey|
+|nombre    |         |      |id_pregunta|SerialKey |
+|apellido  |         |      |question   |          |
+|correo    |         |      |----------------------|
+|contraseña|         |
+|--------------------|
+
+|        answers        |
+|-----------------------|
+|id_respuesta|SerialKey |
+|id_user     |ForeignKey|
+|id_pregunta |ForeignKey|
+|respuesta   |          |
+|-----------------------|
